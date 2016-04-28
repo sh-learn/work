@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>时间</title>
+</head>
+
+<body>
+	<div id="show"></div>
+	<script>
+	    var weekday = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+		window.onload= function(){
+			showTime();
+		}
+		function showTime(){
+			var myDate = new Date(),
+			    year = myDate.getFullYear(),
+			    month = myDate.getMonth()+1,
+			    date = myDate.getDate(),
+			    d = myDate.getDay(),
+			    h = myDate.getHours(),
+			    m = myDate.getMinutes(),
+			    s = myDate.getSeconds();
+			    m = checkTime(m);
+			    s = checkTime(s);
+			    document.getElementById('show').innerHTML= year+'年'+month+'月'+date+'日'+weekday[d]+h+':'+m+':'+s;
+			    setTimeout(showTime,500);
+
+		}
+		function checkTime(i){//补位处理
+           	if(i<10){
+           		i = '0'+i;
+           	}
+           	return i;
+           }
+	</script>
+</body>
+</html>

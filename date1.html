@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>倒计时</title>
+</head>
+<body>
+	<div id="show"></div>
+	<script>
+		window.onload = function(){
+			var curtime = new Date(),
+                endtime = new Date(2016,5,6),
+                lefttime = endtime.getTime()-curtime.getTime();
+                lefttime = Math.ceil(lefttime/(24*60*60*1000));
+                if(lefttime>0){
+                document.getElementById('show').innerHTML='还剩'+lefttime+'天';
+                }
+                	
+		}
+	</script>
+</body>
+</html>
